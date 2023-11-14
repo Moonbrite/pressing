@@ -21,6 +21,7 @@
 <h1 class="">Bonjour <?php
     include "variable.php";
     echo($fullName);
+    //var_dump($fullName);
     ?>
 </h1>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

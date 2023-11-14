@@ -12,15 +12,15 @@ include "variable.php";
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <div class="navbar-collapse" id="navbarNavDarkDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <button class="btn btn-dark dropdown-toggle no-border" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-dark dropdown-toggle no-border ps-0" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href="#">PHP</a></li>
-                                <li><a class="dropdown-item" href="#">PYTON</a></li>
+                                <li><a class="dropdown-item" href="#">PYTHON</a></li>
                                 <li><a class="dropdown-item" href="#">JAVA</a></li>
                             </ul>
                         </li>
@@ -28,7 +28,7 @@ include "variable.php";
                 </div>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item text-center">
+                <li class="nav-item text-lg-center text-start">
                     <?php
                     include "variable.php";
                     if($is_admin) {
