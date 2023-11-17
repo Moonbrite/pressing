@@ -1,6 +1,6 @@
 <?php
 //require 'vendor/autoload.php';
-$is_admin = true;
+$is_admin = false;
 $firstName = "Jose";
 $lastName = "Vale Costa";
 $fullName = $lastName . " " . $firstName;
@@ -10,6 +10,7 @@ $usersTab =[$array = [
     'age' => 28,
     'dateNaissance' => date_create('30-03-1993'),
 ],'val','max'];
+
 
 //var_dump($array);
 //var_dump(count($usersTab));

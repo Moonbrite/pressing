@@ -7,6 +7,14 @@ h1 {
   padding-top: 100px;
 }
 
+h3 {
+  padding-top: 120px;
+}
+
+ul {
+  list-style: none;
+}
+
 header nav {
   z-index: 999;
   background: linear-gradient(to right, #000 0%, #707070 100%);
@@ -46,7 +54,8 @@ section.login-container form {
 
 form input[type=password],
 form input[type=text],
-form button[type=submit] {
+form button[type=submit],
+form input[type=email] {
   width: 100%;
   margin-bottom: 32px;
   padding: 16px;
@@ -58,6 +67,7 @@ form button[type=submit] {
 
 form input[type=text]:focus,
 form input[type=text]:hover,
+form input[type=email]:hover,
 form input[type=password]:focus,
 form input[type=password]:hover {
   background-color: #ccc;
@@ -73,6 +83,41 @@ form button[type=submit] {
 form button[type=submit]:focus,
 form button[type=submit]:hover {
   background-color: #d35400;
+}
+
+img {
+  width: 400px;
+  height: 476px;
+  object-fit: contain;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: brown !important;
+}
+
+.card {
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+.card-body {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.feu {
+  border: 5px solid #ff7e00;
+  background-color: #ff7e00;
+}
+
+.eau {
+  border: 5px solid #00a5ff;
+  background-color: #00a5ff;
+}
+
+.elec {
+  border: 5px solid #e2b500;
+  background-color: #e2b500;
 }
 
 /*# sourceMappingURL=style.css.map */
