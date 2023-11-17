@@ -1,3 +1,15 @@
+<?php
+ session_start();
+ $error =null;
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    if($_POST["mail"] == "josemiguelvalecosta@gmail.com" && $_POST ["password"] == "eUDHdjs3") {
+        $_SESSION["mail"] = "josemiguelvalecosta@gmail.com";
+        header("Location: home.php");
+    }else{
+        $error = "id invalide";
+    }
+}
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -5,17 +17,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <?php
+    include "blocks/styles.php";
+    ?>
     <title>Document</title>
 </head>
 <body>
 <header class="">
     <?php
-    include 'header.php';
+    include 'blocks/header.php';
+    include "blocks/form-identification.php"
     ?>
 </header>
     <section class="login-container">
@@ -23,13 +34,59 @@
             <header>
                 <h2>Identification</h2>
             </header>
-            <form action="" method="post">
-                <input type="text" name="username" placeholder="Nom d'utilisateur" required="required"/>
-                <input type="password" name="password" placeholder="Mot de passe" required="required"/>
+            <form class="" action="" method="post">
+                <input class="form-control <?php
+                if(array_key_exists("mail",$errors)){
+                    echo('is-invalid');
+                }elseif(!empty($_POST['mail'])) {
+                    echo ('is-valid');
+                }
+                ?>" type="email" name="mail" placeholder="Email" required="required" value="<?php
+                if(!empty($_POST['mail'])){
+                    echo($_POST['mail']);
+                }
+                ?>"/>
+                <div class='invalid-feedback msg'>
+                    <?php
+                    if(array_key_exists("mail",$errors)){
+                        echo($errors["mail"]);
+                    }
+                    ?>
+                </div>
+
+
+                <input class="form-control <?php
+                if(array_key_exists("password",$errors)){
+                    echo('is-invalid');
+                }elseif(!empty($_POST['password'])) { //
+                    echo ('is-valid');
+                }
+                ?>" type="password" name="password" placeholder="Mot de passe" required="required" value="<?php
+                if(!empty($_POST['password'])){
+                    echo($_POST['password']);
+                }
+                ?>"/>
+                <div class='invalid-feedback msg'>
+                    <?php
+                    if(array_key_exists("password",$errors)){
+                        echo($errors["password"]);
+                    }
+                    ?>
+                </div>
                 <button type="submit">Connexion</button>
-            </form>
+                <div>
+                    <?php
+                    if(!is_null($error)) {
+                        echo ('<div class="text-danger">'.$error.'</div>');
+                    }
+                    ?>
+                </div>
+                <a href="inscription.php">S'inscrire</a>
+            </form >
         </div>
     </section>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<?php
+include "blocks/js.php";
+?>
 </body>
 </html>

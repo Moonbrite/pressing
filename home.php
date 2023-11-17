@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -5,26 +8,26 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php
-    include 'blocks/styles.php'
-    ?>
     <title>Document</title>
+    <?php
+    include "blocks/styles.php";
+    ?>
 </head>
 <body>
-<header class="">
+<header>
     <?php
-    include 'blocks/header.php';
+    include "blocks/header.php";
     ?>
 </header>
-<h1 class="">Bonjour <?php
-    include "blocks/variable.php";
-    echo($fullName);
-    //var_dump($fullName);
-    ?>
-</h1>
+
+<h3>Hello toi</h3>
+
+
+
 <?php
-include 'blocks/footer.php';
-include 'blocks/js.php';
+include "blocks/footer.php";
+include "blocks/js.php";
+var_dump($_SESSION);
 ?>
 </body>
 </html>
