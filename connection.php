@@ -2,13 +2,22 @@
  session_start();
  $error =null;
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    if($_POST["mail"] == "josemiguelvalecosta@gmail.com" && $_POST ["password"] == "eUDHdjs3") {
-        $_SESSION["mail"] = "josemiguelvalecosta@gmail.com";
+    if($_POST["mail"] == "test@test.fr" && $_POST ["password"] == "eUDHdjs3") {
+        $_SESSION["mail"] = "test@test.fr";
         header("Location: home.php");
     }else{
-        $error = "id invalide";
+        $error = "Le mail ou le mot de passe ne corsponde pas";
     }
 }
+if($_SERVER["REQUEST_METHOD"]=="POST") {
+    if(array_key_exists("mail",$_SESSION)) {
+        if ($_SESSION["email"]) {
+            header('Location: home.php');
+            exit();
+        }
+    }
+}
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -26,7 +35,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <header class="">
     <?php
     include 'blocks/header.php';
-    include "blocks/form-identification.php"
     ?>
 </header>
     <section class="login-container">
@@ -35,44 +43,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 <h2>Identification</h2>
             </header>
             <form class="" action="" method="post">
-                <input class="form-control <?php
-                if(array_key_exists("mail",$errors)){
-                    echo('is-invalid');
-                }elseif(!empty($_POST['mail'])) {
-                    echo ('is-valid');
-                }
-                ?>" type="email" name="mail" placeholder="Email" required="required" value="<?php
+                <input class="form-control " type="email" name="mail" placeholder="Email" required="required" value="<?php
                 if(!empty($_POST['mail'])){
                     echo($_POST['mail']);
                 }
                 ?>"/>
-                <div class='invalid-feedback msg'>
-                    <?php
-                    if(array_key_exists("mail",$errors)){
-                        echo($errors["mail"]);
-                    }
-                    ?>
-                </div>
 
-
-                <input class="form-control <?php
-                if(array_key_exists("password",$errors)){
-                    echo('is-invalid');
-                }elseif(!empty($_POST['password'])) { //
-                    echo ('is-valid');
-                }
-                ?>" type="password" name="password" placeholder="Mot de passe" required="required" value="<?php
+                <input class="form-control" type="password" name="password" placeholder="Mot de passe" required="required" value="<?php
                 if(!empty($_POST['password'])){
                     echo($_POST['password']);
                 }
                 ?>"/>
-                <div class='invalid-feedback msg'>
-                    <?php
-                    if(array_key_exists("password",$errors)){
-                        echo($errors["password"]);
-                    }
-                    ?>
-                </div>
                 <button type="submit">Connexion</button>
                 <div>
                     <?php
