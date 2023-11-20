@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 
 if($_SERVER["REQUEST_METHOD"]=="POST") {
-    if (count($errors) == 0) {
+    if (count($errors) == 0 and $_SESSION["email"] == "josemiguealvalecosta@gmail.com") {
         header('Location: home.php');
         exit();
     }
