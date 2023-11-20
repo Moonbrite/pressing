@@ -21,7 +21,7 @@ session_start();
     ?>
 </header>
 <h3>Hello toi</h3>
-
+<img style="width:800px" src="assets/giphy.gif" alt="">
 <?php
 include 'blocks/footer.php';
 include 'blocks/js.php';

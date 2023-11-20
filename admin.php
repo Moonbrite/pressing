@@ -22,7 +22,7 @@ session_start();
 <h1 class="">Bonjour <?php
     include "blocks/variable.php";
     echo($fullName);
-    //var_dump($fullName);
+    
     ?>
 </h1>
 <?php

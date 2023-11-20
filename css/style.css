@@ -132,4 +132,39 @@ img {
   margin-top: 1rem;
 }
 
+.oeil {
+  position: absolute;
+  top: 93px;
+  right: 20px;
+}
+
+.oeil-i {
+  position: absolute;
+  top: 249px;
+  right: 20px;
+}
+
+.oeil-d {
+  position: absolute;
+  top: 325px;
+  right: 20px;
+}
+
+form {
+  position: relative;
+}
+
+.img-moi {
+  background: currentColor;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.oeil-d,
+.oeil-i,
+.oeil {
+  opacity: 0.5;
+}
+
 /*# sourceMappingURL=style.css.map */
