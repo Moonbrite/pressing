@@ -4,6 +4,9 @@
             <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
         </a>
         <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
+        <?php
+        include 'cookie-concents.php'
+        ?>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

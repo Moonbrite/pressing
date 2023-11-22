@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!array_key_exists("mail",$_SESSION)) {
+    header('Location: index.php');
+    exit();
+}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -13,7 +17,9 @@ session_start();
     ?>
     <title>Document</title>
 </head>
-<body>
+<body class="<?php
+include "blocks/theme-dark.php"
+?>">
 <header>
     <?php
     include "blocks/header.php";

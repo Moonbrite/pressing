@@ -12,7 +12,9 @@ session_start();
     ?>
     <title>Document</title>
 </head>
-<body>
+<body class="<?php
+include "blocks/theme-dark.php"
+?>">
 <header>
     <?php
     include "blocks/header.php";

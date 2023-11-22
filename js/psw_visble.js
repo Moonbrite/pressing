@@ -33,6 +33,7 @@ eyeClose.addEventListener("click", function () {
 
 const eye1 = document.getElementById("eye1");
 const eyeClose1 = document.getElementById("eyeClose1");
+
 eye1.addEventListener("click", function () {
     myFunctionDeOuf();
     eyeClose1.classList.remove("d-none");

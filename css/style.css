@@ -8,7 +8,7 @@ h1 {
 }
 
 h3 {
-  padding-top: 20vh;
+  padding-top: 25vh;
 }
 
 h4 {
@@ -156,8 +156,8 @@ form {
 
 .img-moi {
   background: currentColor;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
 }
 
@@ -166,5 +166,7 @@ form {
 .oeil {
   opacity: 0.5;
 }
+
+
 
 /*# sourceMappingURL=style.css.map */

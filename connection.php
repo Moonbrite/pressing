@@ -31,7 +31,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     ?>
     <title>Document</title>
 </head>
-<body>
+<body class="<?php
+include "blocks/theme-dark.php"
+?>">
 <header class="">
     <?php
     include 'blocks/header.php';

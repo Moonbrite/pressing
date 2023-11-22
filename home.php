@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!array_key_exists("mail",$_SESSION)) {
+    header('Location: index.php');
+    exit();
+}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -13,15 +17,26 @@ session_start();
     include "blocks/styles.php";
     ?>
 </head>
-<body>
+<body class="<?php
+include "blocks/theme-dark.php"
+?>">
 <header>
     <?php
     include "blocks/header.php";
     ?>
 </header>
 
-<h3>Hello toi</h3>
+<h3>Mes photos</h3>
 
+<?php
+$dir = 'assets/';
+$files1 = scandir($dir);
+for($i =0;$i < count($files1);$i++) {
+    if($files1[$i] != "." && $files1[$i] != ".."){
+        echo ('<img src="'.$dir.$files1[$i].'" alt="">');
+    }
+}
+?>
 
 
 <?php

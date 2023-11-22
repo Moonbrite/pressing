@@ -9,7 +9,7 @@ h1{
 }
 
 h3 {
-  padding-top: 20vh;
+  padding-top: 25vh;
 }
 h4 {
   padding: 15px 0;
@@ -21,6 +21,9 @@ ul {
 body {
   background: rgba(215, 215, 215, 0.8);
 }
+
+//==================================================================================
+// Nav
 header {
   nav {
     z-index: 999;
@@ -93,7 +96,8 @@ form button[type="submit"]:focus,
 form button[type="submit"]:hover {
   background-color: #d35400;
 }
-
+//===========================================================
+//Panier
 img{
   width: 400px ;
   height: 476px;
@@ -159,8 +163,8 @@ form {
 
 .img-moi {
   background: currentColor;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
 }
 

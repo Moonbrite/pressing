@@ -10,7 +10,11 @@ include "variable.php";
             <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+                        <?php
+                        if(array_key_exists("mail",$_SESSION)){
+                            echo ('<a class="nav-link active" aria-current="page" href="home.php">Home</a>');
+                        }
+                        ?>
                     </li>
                     <div class="navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">
@@ -27,7 +31,53 @@ include "variable.php";
                         </ul
                     </div>
                 </ul>
-                <ul class="navbar-nav align-items-center">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item text-lg-center text-start">
+                        <a href=""></a>
+                        <?php
+                        if(array_key_exists("dark", $_GET)) {
+                            setcookie("theme-dark",$_GET ["dark"], time()+60*60*24);
+                            $urlR = $_SERVER ["REQUEST_URI"];
+                            $urlR = explode("?","$urlR")[0];
+                            header('Location:'.$urlR);
+                            exit();
+                        }
+                        if(array_key_exists("consent", $_COOKIE)){
+                            if (array_key_exists("theme-dark", $_COOKIE) && $_COOKIE["theme-dark"]  == "yes") {
+                                echo('<a href="?dark=no"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M12 7a5 5 0 1 0 0 10 5 5 0 1 0 0-10z"></path>
+                                      <path d="M12 1v2"></path>
+                                      <path d="M12 21v2"></path>
+                                      <path d="m4.22 4.22 1.42 1.42"></path>
+                                      <path d="m18.36 18.36 1.42 1.42"></path>
+                                      <path d="M1 12h2"></path>
+                                      <path d="M21 12h2"></path>
+                                      <path d="m4.22 19.78 1.42-1.42"></path>
+                                      <path d="m18.36 5.64 1.42-1.42"></path>
+                                    </svg></a>');
+                            }elseif(array_key_exists("theme-dark", $_COOKIE) && $_COOKIE["theme-dark"]  == "no"){
+                                echo('<a href="?dark=yes"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+                                    </svg></a>');
+                            }else{
+                                echo('<a href="?dark=no"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M12 7a5 5 0 1 0 0 10 5 5 0 1 0 0-10z"></path>
+                                      <path d="M12 1v2"></path>
+                                      <path d="M12 21v2"></path>
+                                      <path d="m4.22 4.22 1.42 1.42"></path>
+                                      <path d="m18.36 18.36 1.42 1.42"></path>
+                                      <path d="M1 12h2"></path>
+                                      <path d="M21 12h2"></path>
+                                      <path d="m4.22 19.78 1.42-1.42"></path>
+                                      <path d="m18.36 5.64 1.42-1.42"></path>
+                                    </svg></a>');
+                                echo('<a href="?dark=yes"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+                                    </svg></a>');
+                            }
+                        }
+                        ?>
+                    </li>
                     <li class="nav-item text-lg-center text-start">
                         <?php
                         include "variable.php";
@@ -51,6 +101,12 @@ include "variable.php";
                         }
                         ?>
                     </li>
+                    <?php
+                    if(array_key_exists("mail",$_SESSION)) {
+                        echo('<li><a href="ajouter_image.php">Ajouter une image</a></li>');
+                    }
+                    ?>
+
                 </ul>
             </div>
         </div>

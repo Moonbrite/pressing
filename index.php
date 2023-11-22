@@ -13,7 +13,10 @@ session_start();
     ?>
     <title>Document</title>
 </head>
-<body>
+<body class="<?php
+include "blocks/theme-dark.php"
+?>
+">
 <header class="">
     <?php
     include "blocks/variable.php";
@@ -21,7 +24,7 @@ session_start();
     ?>
 </header>
 <h3>Hello toi</h3>
-<img style="width:800px" src="assets/giphy.gif" alt="">
+<img  src="assets/giphy.gif" alt="">
 <?php
 include 'blocks/footer.php';
 include 'blocks/js.php';
