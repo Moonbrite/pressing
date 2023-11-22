@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!array_key_exists("mail",$_SESSION)) {
-    header('Location: index.php');
+    header('Location: connection.php');
     exit();
 }
 $errors = [];

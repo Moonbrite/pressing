@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!array_key_exists("mail",$_SESSION)) {
-    header('Location: index.php');
+    header('Location: connection.php');
     exit();
 }
 ?>
@@ -17,7 +17,9 @@ if(!array_key_exists("mail",$_SESSION)) {
     ?>
     <title>Document</title>
 </head>
-<body>
+<body class="<?php
+include "blocks/theme-dark.php"
+?>">
 <header class="">
     <?php
     include 'blocks/header.php';
@@ -26,7 +28,6 @@ if(!array_key_exists("mail",$_SESSION)) {
 <h1 class="">Bonjour <?php
     include "blocks/variable.php";
     echo($fullName);
-    
     ?>
 </h1>
 <?php

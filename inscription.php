@@ -22,7 +22,7 @@ include "blocks/theme-dark.php"
 </header>
 <section class="login-container">
     <div class="">
-        <h4>Inscription</h4>
+        <h4 class="text-dark">Inscription</h4>
         <?php
         include 'blocks/form-insc.php';
         ?>

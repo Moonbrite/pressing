@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!array_key_exists("mail",$_SESSION)) {
-    header('Location: index.php');
+    header('Location: connection.php');
     exit();
 }
 ?>
@@ -42,7 +42,6 @@ for($i =0;$i < count($files1);$i++) {
 <?php
 include "blocks/footer.php";
 include "blocks/js.php";
-var_dump($_SESSION);
 ?>
 </body>
 </html>

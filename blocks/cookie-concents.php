@@ -7,7 +7,19 @@ if(array_key_exists("cookie", $_GET) && $_GET ["cookie"] == "yes") {
     exit();
 }
 if (!array_key_exists("consent", $_COOKIE)) {
-    echo ('<span class="mb-3 mb-md-0 text-body-secondary">Veuiller accecpter les cookie</span>
-                  <a href="?cookie=yes"><button class="btn btn-success">Oui</button></a>');
+    echo ('<div class="cookie-card col-md-4">
+        <span class="title">🍪 Cookie Notice</span>
+        <p class="description">We use cookies to ensure that we give you the best experience on our website. <a href="#">Read cookies policies</a>. </p>
+        <div class="actions">
+            <button class="pref">
+                Manage your preferences
+            </button>
+            <a href="?cookie=yes">
+                <button class="accept">
+                    Accept
+                </button>
+            </a>
+        </div>
+    </div>');
 }
 ?>

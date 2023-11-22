@@ -4,15 +4,16 @@
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     if($_POST["mail"] == "test@test.fr" && $_POST ["password"] == "eUDHdjs3") {
         $_SESSION["mail"] = "test@test.fr";
-        header("Location: home.php");
+        header("Location: index.php");
     }else{
         $error = "Le mail ou le mot de passe ne corsponde pas";
     }
 }
+
 if($_SERVER["REQUEST_METHOD"]=="POST") {
     if(array_key_exists("mail",$_SESSION)) {
         if ($_SESSION["email"]) {
-            header('Location: home.php');
+            header('Location: index.php');
             exit();
         }
     }
@@ -42,7 +43,7 @@ include "blocks/theme-dark.php"
     <section class="login-container">
         <div>
             <header>
-                <h2>Identification</h2>
+                <h2 class="text-dark">Identification</h2>
             </header>
             <form class="" action="" method="post">
                 <input class="form-control " type="email" name="mail" placeholder="Email" required="required" value="<?php
