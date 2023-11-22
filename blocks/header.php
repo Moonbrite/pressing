@@ -61,13 +61,13 @@ include "variable.php";
                                       <path d="M21 12h2"></path>
                                       <path d="m4.22 19.78 1.42-1.42"></path>
                                       <path d="m18.36 5.64 1.42-1.42"></path>
-                                    </svg></a> <a class="nav-link" href="?dark=no">Mode Light</a>');
+                                    </svg></a> <a class="nav-link" href="?dark=no">Light Mode</a>');
                             }elseif(array_key_exists("theme-dark", $_COOKIE) && $_COOKIE["theme-dark"]  == "no"){
                                 echo('<a class="nav-link" href="?dark=yes"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
-                                    </svg></a><a class="nav-link" href="?dark=yes">Mode Dark</a>');
+                                    </svg></a><a class="nav-link" href="?dark=yes">Dark Mode</a>');
                             }else{
-                                echo('<a class="nav-link" href="?dark=no"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                echo('<li class="nav-item text-lg-center text-start"><a class="nav-link" href="?dark=no"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                       <path d="M12 7a5 5 0 1 0 0 10 5 5 0 1 0 0-10z"></path>
                                       <path d="M12 1v2"></path>
                                       <path d="M12 21v2"></path>
@@ -77,10 +77,10 @@ include "variable.php";
                                       <path d="M21 12h2"></path>
                                       <path d="m4.22 19.78 1.42-1.42"></path>
                                       <path d="m18.36 5.64 1.42-1.42"></path>
-                                    </svg></a><a class="nav-link" href="?dark=no">Mode Light</a>');
-                                echo('<a class="nav-link" href="?dark=yes"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    </svg></a><a class="nav-link" href="?dark=no">Light Mode</a></li>');
+                                echo('<li class="nav-item text-lg-center text-start"><a class="nav-link" href="?dark=yes"><svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
-                                    </svg></a><a class="nav-link" href="?dark=yes">Mode Dark</a>');
+                                    </svg></a><a class="nav-link" href="?dark=yes">Dark Mode</a></li>');
                             }
                         }
                         ?>
