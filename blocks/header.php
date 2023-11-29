@@ -1,7 +1,4 @@
-<?php
-include "variable.php";
-?>
-    <nav class="navbar navbar-expand-lg  position-fixed w-100">
+<nav class="navbar navbar-expand-lg  position-fixed w-100">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">Mon Pressing de ouf</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

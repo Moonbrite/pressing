@@ -7,19 +7,20 @@ if(!array_key_exists("mail",$_SESSION)) {
 $errors = [];
 $allwoedExtension =["image/jpeg","image/png"];
 if($_SERVER["REQUEST_METHOD"]=="POST") {
-    if ($_FILES["photos"]["error"] != 0){
-        $errors [] ="inconu";
+    if ($_FILES["photos"]["error"] != 0 and $_FILES["photos"]["error"] != 4){
+        $errors [] = "Erreur inconnue";
     }
     if (in_array($_FILES["photos"]["type"],$allwoedExtension)){
-        if ($_FILES["photos"]["size"]>2097152){
-            $errors [] = "tros grosse";
+        if ($_FILES["photos"]["error"] == 4){
+            $errors [] = "Ta rien mis bouffon";
+        }elseif ($_FILES["photos"]["size"]>2097152){
+            $errors [] = "Fichier tros volumineux";
         }
     }else{
-        $errors [] = "Pas bon";
+        $errors [] = "Extension non autorisé";
     }
+    if (count($errors) == 0) {
 
-    if (count($errors)== 0) {
-        move_uploaded_file($_FILES["photos"]["tmp_name"],"assets/".uniqid().'-'.$_FILES["photos"]["name"]);
         header('Location: home.php');
 }
 }
@@ -55,9 +56,15 @@ include "blocks/theme-dark.php"
     </form>
     <?php
         if(count($errors) != 0){
+            ?>
+        <ul>
+            <?php
             foreach ($errors as $error){
                 echo("<li>".$error."</li>");
             }
+            ?>
+    </ul>
+    <?php
         }
     ?>
 </section>
